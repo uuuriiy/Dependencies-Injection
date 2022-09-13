@@ -1,8 +1,9 @@
-import { logger, users } from "./ioc/index";
+import { iocContainer } from "./ioc/index";
 
 import type { User } from './types';
 
 const renderUsers = async () => {
+  const users = iocContainer.resolve('users');
   const usersMock = await users.getUsers();
 
   const listNode = document.getElementById('users-list');
@@ -20,6 +21,7 @@ const app = () => {
 };
 
 window.onload = () => {
+  const logger = iocContainer.resolve('logger');
   logger.info('Page is loaded.');
 
   app();

@@ -17,7 +17,4 @@ export const createIoCContainer = () =>  {
   return ioc;
 };
 
-export const apiConfig = createIoCContainer().resolve('apiConfig');
-export const logger = createIoCContainer().resolve('logger');
-export const http = createIoCContainer().resolve('http');
-export const users = createIoCContainer().resolve('users');
+export const iocContainer = createIoCContainer();
